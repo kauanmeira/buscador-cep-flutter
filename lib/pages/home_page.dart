@@ -29,7 +29,7 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Buscar CEP'),
-        backgroundColor: Colors.teal, // Change app bar color
+        backgroundColor: Colors.teal,
       ),
       body: SingleChildScrollView(
         child: Form(
@@ -45,8 +45,7 @@ class _HomePageState extends State<HomePage> {
                     labelText: 'CEP',
                     prefixIcon: Icon(Icons.location_on),
                     border: OutlineInputBorder(
-                      borderSide:
-                          BorderSide(color: Colors.teal), // Add border color
+                      borderSide: BorderSide(color: Colors.teal),
                     ),
                   ),
                   validator: (value) {
@@ -82,38 +81,32 @@ class _HomePageState extends State<HomePage> {
                     }
                   },
                   style: ElevatedButton.styleFrom(
-                    primary: Colors.black, // Change button color here
+                    primary: Colors.teal, // Change button color here
                     // You can add more styling options as needed
                   ),
-                  child: const Text('Buscar'),
+                  child: const Text(
+                    'Buscar',
+                    style: TextStyle(color: Colors.black),
+                  ),
                 ),
                 SizedBox(height: 16),
                 if (loading)
-                  Center(
-                      child: CircularProgressIndicator(
-                          color:
-                              Colors.teal)), // Change loading indicator color
+                  Center(child: CircularProgressIndicator(color: Colors.teal)),
                 if (enderecoModel != null)
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
                       Text(
                         'Logradouro: ${enderecoModel?.logradouro}',
-                        style: TextStyle(
-                            fontSize: 16,
-                            color: Colors.teal), // Change text color
+                        style: TextStyle(fontSize: 16, color: Colors.teal),
                       ),
                       Text(
                         'Complemento: ${enderecoModel?.complemento}',
-                        style: TextStyle(
-                            fontSize: 16,
-                            color: Colors.teal), // Change text color
+                        style: TextStyle(fontSize: 16, color: Colors.teal),
                       ),
                       Text(
                         'CEP: ${enderecoModel?.cep}',
-                        style: TextStyle(
-                            fontSize: 16,
-                            color: Colors.teal), // Change text color
+                        style: TextStyle(fontSize: 16, color: Colors.teal),
                       ),
                     ],
                   ),
